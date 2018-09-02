@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+</head>
+<body>
+
+    <div class="bs-example" data-example-id="hoverable-table">
+        <table class="table table-hover">
+            <caption>学生管理</caption>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>学生姓名</th>
+                <th>年龄</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="stu : ${list}">
+                <th scope="row">1</th>
+                <td th:text="${stu.name}">Mark</td>
+                <td th:text="${stu.age}">Otto</td>
+                <td><a th:href="@{/student/before/{stuId}(stuId=${stu.id})}">修改</a></td>
+                <td><a th:href="@{/student/delete/{stuId}(stuId=${stu.id})}">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

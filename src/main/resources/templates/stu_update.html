@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"></link>
+    <style>
+        form{
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 20%;
+            margin: auto;}
+    </style>
+</head>
+<body>
+    <form th:action="@{/student/update}" method="get">
+        <div class="form-group">
+            <label for="exampleInputEmail1">学生姓名：</label>
+            <input type="text" th:value="${student.name}"  name="name" class="form-control" id="exampleInputEmail1" placeholder="学生姓名">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">年龄：</label>
+            <input type="text" th:value="${student.age}" name="age" class="form-control" id="exampleInputPassword1" placeholder="年龄">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default">修改</button>
+        </div>
+    </form>
+</body>
+</html>
